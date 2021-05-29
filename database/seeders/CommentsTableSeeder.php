@@ -3,6 +3,7 @@ namespace Database\Seeders;
 
 use App\Models\Article;
 use App\Models\Comment;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,7 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         if (app()->environment() != 'production') {

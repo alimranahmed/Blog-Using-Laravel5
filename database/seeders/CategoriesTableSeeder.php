@@ -16,50 +16,50 @@ class CategoriesTableSeeder extends Seeder
         $categories[] = [
             'name' => 'Object Oriented Programming',
             'alias' => 'oop',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $categories[] = [
             'name' => 'Programming',
             'alias' => 'programming',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $categories[] = [
             'name' => 'PHP',
             'alias' => 'php',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $categories[] = [
             'name' => 'Java',
             'alias' => 'java',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $categories[] = [
             'name' => 'Python',
             'alias' => 'python',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $categories[] = [
             'name' => 'Web Frontend',
             'alias' => 'web_frontend',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $categories[] = [
             'name' => 'Miscellaneous',
             'alias' => 'misc',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         \App\Models\Category::insert($categories);
