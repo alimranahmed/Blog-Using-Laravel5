@@ -1,63 +1,62 @@
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-# Blog Using Laravel 8
-### Let's keep it as simple as possible. Configure anything you want
-A full-featured blogging system for personal use. Minimum library used. No frontend theme and anything heavy or unnecessary library used.  
- 
-### There are four several types of users with several permissions
-1. Admin
-  * Can manage articles and comments of other users
-  * Can manage categories 
-  * Can manage keywords
-  * Can manage other users except Owner
-  
-2. Owner
-  * Can do anything that can be done by admin
-  * Create admin user
-  * Change system configuration variables
-  
-3. Author
-  * Can write article and can manage his own article
-  * Can manage comments on his own article
-  
-4. Reader
-  * Can read and comment on article providing his email address. 
-  * Can subscribe to be notified for new article
-  * Can search for article with
-  * Can navigate article based on categories
+## About Laravel
 
-### Installation Process
-1. Execute `git clone https://github.com/alimranahmed/LaraBlog.git` on your terminal to download this project.
-2. Go to the project root directory and execute `composer install` to install all PHP dependencies of the project
-3. Create a file named as .env and copy the content of .env.example to newly created .env file 
-4. Then execute `php artisan key:generate` on your terminal/cmd to generate environment key
-5. Then create a Database for this project and edit the .env file to authorized this project on your database. 
-6. Execute `php artisan migrate:refresh --seed` terminal on your terminal.
-7. Now you are ready to go, If you don't want to create any virtual host for this project then execute
-  `php artisan serve`
-8. Now visit the url shown on your terminal, something like `localhost:8000`. Its running!
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### Screen shots
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-##### Home page
-![home_page](https://cloud.githubusercontent.com/assets/7629427/26286312/ecbaaeb8-3e83-11e7-8cd2-9f049ff7e04c.png)
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-##### Single article view
-![article_page](https://cloud.githubusercontent.com/assets/7629427/26286311/e5a98770-3e83-11e7-95e2-f6a60fff8051.png)
+## Learning Laravel
 
-##### Admin panel view
-![configurations](https://cloud.githubusercontent.com/assets/7629427/26286313/f3499924-3e83-11e7-9418-99903a4ef136.png)
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-### Contribution 
-**Anyone is always welcome to contribute on the project. If you want to work with:**
-1. Just create and issue(even if you want to fix the issue). 
-2. After fixing any issue or adding any new feature just send a pull request
-3. I will be happy to add your code for the betterment of this project. 
-Thanks.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-##### Note
-If you cloned the project little bit earlier and after pulling the newer changes it's not working now, please execute the `composer update` command in the CLI when you are the root directory of the project. Beside, don't forge to cross match your `.env` file version with newly pulled `.env.example` file.
+## Laravel Sponsors
 
-##### License
-[MIT](https://opensource.org/licenses/MIT)
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+
+### Premium Partners
+
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

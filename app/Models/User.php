@@ -2,57 +2,60 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use HasApiTokens;
     use HasFactory;
-    use HasRoles;
+    use HasProfilePhoto;
     use Notifiable;
+    use TwoFactorAuthenticatable;
 
-    protected $guarded = ['id'];
-    protected $appends = ['createdAtHuman'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 
-    public function articles()
-    {
-        return $this->hasMany(Article::class);
-    }
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
+    ];
 
-    public function image()
-    {
-        return $this->belongsTo(Image::class);
-    }
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
-    public function reader()
-    {
-        return $this->hasOne(Reader::class);
-    }
-
-    public function isReader()
-    {
-        return !is_null($this->reader);
-    }
-
-    public function scopeActive(Builder $builder)
-    {
-        return $builder->where('is_active', 1);
-    }
-
-    public function getCreatedAtHumanAttribute()
-    {
-        $carbonDate = new Carbon($this->created_at);
-        return $carbonDate->diffForHumans();
-    }
-
-    public static function getSubscribedUsers()
-    {
-        $subscribedReadersIds = Reader::subscribed()
-            ->verified()
-            ->pluck('user_id');
-        return self::whereIn('id', $subscribedReadersIds)->get();
-    }
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'profile_photo_url',
+    ];
 }
